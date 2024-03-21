@@ -38,6 +38,7 @@
     		close(i);
     		FD_CLR(i, master);
     	}else { 
+            recv_buf[nbyte_recvd] = '\0';
     		printf("%s\n", recv_buf);
     		for(j = 0; j <= fdmax; j++){
     			send_to_all(j, i, sockfd, nbytes_recvd, recv_buf, master );
