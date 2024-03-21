@@ -37,7 +37,7 @@ int main()
 	// no need to specify server address in sendto 
 	// connect stores the peers IP and port 
 	
-	char buffer[50];
+	char buffer[100];
 	printf("Enter message : ");
 	fgets(buffer, 100, stdin);	
 	
