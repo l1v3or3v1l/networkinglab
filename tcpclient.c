@@ -18,7 +18,7 @@ int main() {
 		printf("Error in connecting to server");
 	}
 	char buf[100];
-	printf("Enter data to be send : ");
+	printf("Enter message to send to server : ");
 	fgets(buf, 100, stdin);
 	k = send(sd, buf, 100, 0);
 	if (k == -1) {

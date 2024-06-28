@@ -34,8 +34,8 @@ int main() {
 	if (k == -1) {
 		printf("Error in receiving");
 	}
-	printf("Message got from client is : %s", buf);
-	printf("Enter message : ");
+	printf("Message received from client is : %s", buf);
+	printf("Enter message to send to client : ");
 	fgets(buf, 100, stdin);
 	k = send(tmpSd, buf, 100, 0);
 	if (k == -1) {
