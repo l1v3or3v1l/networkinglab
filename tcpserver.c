@@ -30,17 +30,18 @@ int main() {
 		printf("Error in temporary socket creation");
 	}
 	char buf[100];
+	k = recv(tmpSd, buf, 100, 0);
+	if (k == -1) {
+		printf("Error in receiving");
+	}
+	printf("Message got from client is : %s", buf);
 	printf("Enter message : ");
 	fgets(buf, 100, stdin);
 	k = send(tmpSd, buf, 100, 0);
 	if (k == -1) {
 		printf("Error in sending");
 	}
-	k = recv(tmpSd, buf, 100, 0);
-	if (k == -1) {
-		printf("Error in receiving");
-	}
-	printf("Message got from client is : %s", buf);
+
 	close(tmpSd);
 	return 0;
 }

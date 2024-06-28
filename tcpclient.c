@@ -18,17 +18,17 @@ int main() {
 		printf("Error in connecting to server");
 	}
 	char buf[100];
-	k = recv(sd, buf, 100, 0);
-	if (k == -1) {
-		printf("Error in receiving");
-	}
-	printf("Message received from server : %s", buf);
 	printf("Enter data to be send : ");
 	fgets(buf, 100, stdin);
 	k = send(sd, buf, 100, 0);
 	if (k == -1) {
 		printf("Error in sending");
 	}
+	k = recv(sd, buf, 100, 0);
+	if (k == -1) {
+		printf("Error in receiving");
+	}
+	printf("Message received from server : %s", buf);
 	close(sd);
 	return 0;
 }
